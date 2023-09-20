@@ -191,7 +191,7 @@ We can see a list of all the Terraform commands by simply typing `terraform`
 #### Terraform Init
 At the start of a new Terraform project we will run `terraform init` to download the binaries for the terraform providers that we'll use in this project.
 
-### Terraform Plan
+#### Terraform Plan
 
 `terraform plan`
 
@@ -206,6 +206,12 @@ We can ouput this changeset ie. "plan" to be passed to an apply, but often you c
 This will run a plan and pass the changeset to be executed by Terraform. Apply should prompt yes or no.
 
 If we want to automatically approve an apply, we can provide the auto approve flag eg. `terraform apply --auto-approve`
+
+#### Terraform Destroy
+
+`terraform destroy` will destroy the entire infrastructure that Terraform created.
+
+To automatically approve a destroy, we can provide the auto approve flag eg. `terraform apply --auto-approve`
 
 #### Terraform Lock Files
 
