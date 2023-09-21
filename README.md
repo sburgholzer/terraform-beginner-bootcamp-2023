@@ -259,3 +259,5 @@ Provide the following JSON and replace the token with your own token:
     }
 }
 ```
+
+We have automated this workaround with the following bash script [./bin/generate_tfrc_credentials.sh](./bin/generate_tfrc_credentials.sh)
