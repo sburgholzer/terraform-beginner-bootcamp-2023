@@ -60,3 +60,23 @@ Will use this automatically when running terraform plan or terraform apply
 ![image8-2](https://github.com/sburgholzer/terraform-beginner-bootcamp-2023/assets/21959408/2668ca8d-e40b-4bff-8a49-68dac14bb6c3)
 
 [Image from Omkar Birade at spacelift] (https://spacelift.io/blog/terraform-tfvars)
+
+
+## Dealing With Configuration Drift
+
+### What happens if we lose our state file?
+
+If you lose your statefile, you most likely have to tear down all your cloud infrastructure manually.
+
+You can use terraform import but it isn't avaliable for all cloud resources. You need check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+
+If someone goes and deletes or modifies cloud resources manually through ClickOps (the web console or CLI or similar and not through our Terraform project), the next time we run `terraform plan`, terraform will attempt to put our infrastructure back into the expected state we have coded which then fixes the configuration drift.
