@@ -56,3 +56,7 @@ Will use this automatically when running terraform plan or terraform apply
 - terraform.tfvars.json. This overrides terraform.tfvars and env vars
 - terraform.tfvars. This overrides env vars
 - env vars. These are overriden by everything else
+
+![image8-2](https://github.com/sburgholzer/terraform-beginner-bootcamp-2023/assets/21959408/2668ca8d-e40b-4bff-8a49-68dac14bb6c3)
+
+[Image from Omkar Birade at spacelift] (https://spacelift.io/blog/terraform-tfvars)
