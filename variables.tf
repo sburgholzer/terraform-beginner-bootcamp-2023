@@ -9,23 +9,20 @@ variable "teacherseat_user_uuid" {
   type = string
 }
 
-/*variable "bucket_name" {
-  type = string
-}*/
-
-variable "index_html_filepath" {
-  type = string
+variable "garth" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "error_html_filepath" {
-  type = string
+/*
+This is how we would do a second home
+variable "replace_me" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "content_version" {
-  type = number
-}
-
-variable "assets_path" {
-  description = "Path to assets folder"
-  type        = string
-}
+*/
