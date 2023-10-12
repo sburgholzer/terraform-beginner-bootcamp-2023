@@ -33,7 +33,8 @@ class Home
     'cooker-cove',
     'video-valley',
     'the-nomad-pad',
-    'gamers-grotto'
+    'gamers-grotto',
+    'missingo'
   ] }
   # visible to all users
   validates :name, presence: true

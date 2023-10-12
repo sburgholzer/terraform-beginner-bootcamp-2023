@@ -12,7 +12,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -324,7 +323,6 @@ func resourceHouseDelete(ctx context.Context, d *schema.ResourceData, m interfac
 	}
 
 	d.SetId("")
-
 
 	log.Print("resourceHouseDelete:end")
 	return diags
