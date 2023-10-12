@@ -6,7 +6,8 @@ tasks:
       cd $PROJECT_ROOT
       source ./bin/set_tf_alias.sh
       source ./bin/install_terraform_cli.sh
-      source ./bin/generate_tfrc_credentials
+      source ./bin/generate_tfrc_credentials.sh
+      source ./bin/build_provider.sh
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
   - name: aws-cli
     env:

@@ -5,13 +5,13 @@ terraform {
       version = "1.0.0"
     }
   }
-  /*cloud {
+  cloud {
     organization = "Scott-Private"
 
     workspaces {
-      name = "terra-house-1"
+      name = "garth-brooks-terrahome"
     }
-  }*/
+  }
 }
 
 provider "terratowns" {
@@ -20,23 +20,41 @@ provider "terratowns" {
     token = var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
-  source              = "./modules/terrahouse_aws"
-  user_uuid           = var.teacherseat_user_uuid
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version     = var.content_version
-  assets_path         = var.assets_path
+module "home_garth_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.garth.public_path
+  content_version = var.garth.content_version
 }
 
-resource "terratowns_home" "home"{
-  name = "Scott B test"
+resource "terratowns_home" "home_garth" {
+  name = "About Garth Brooks"
   description = <<DESCRIPTION
-Scott b Test Descr
-
-  DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
-  #domain_name = "34dad.cloudfront.net"
-  town = "missingo"
-  content_version = 3
+All about Garth Brooks
+DESCRIPTION
+  domain_name = module.home_garth_hosting.domain_name
+  town = "melomaniac-mansion"
+  content_version = var.garth.content_version
 }
+
+
+/*
+This is how we would set up a second home
+module "home_REPLACEME_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.REPLACEME.public_path
+  content_version = var.REPLACEME.content_version
+}
+
+resource "terratowns_home" "home_REPLACEME" {
+  name = "Replace Me"
+  description = <<DESCRIPTION
+Replace me
+DESCRIPTION
+  domain_name = module.home_REPLACEME_hosting.domain_name
+  town = "REPLACEME"
+  content_version = var.REPLACEME.content_version
+}
+
+*/
