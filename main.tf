@@ -30,3 +30,14 @@ provider "terratowns" {
   assets_path         = var.assets_path
 }*/
 
+resource "terratowns_home" "home"{
+  name = "Scott B test"
+  description = <<DESCRIPTION
+Scott b Test Descr update
+
+  DESCRIPTION
+  #domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = "34dad.cloudfront.net"
+  town = "missingo"
+  content_version = 3
+}
